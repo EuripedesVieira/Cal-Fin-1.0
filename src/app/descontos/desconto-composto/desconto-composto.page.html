@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Desconto composto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="class1">
+  <ion-item>
+    <ion-label position="floating">Valor do título</ion-label>
+    <ion-input type="number" name="valorTitulo" [(ngModel)]="valorTitulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Taxa percentual</ion-label>
+    <ion-input type="number" name="taxa" [(ngModel)]="taxa"></ion-input>
+  </ion-item>
+  <ion-radio-group name="tipoTaxa" [(ngModel)]="tipoTaxa">
+    <ion-item>
+      <ion-radio [value]="1"></ion-radio>
+      <ion-label>mensal</ion-label>
+      <ion-radio [value]="2"></ion-radio>
+      <ion-label>Anual</ion-label>               
+    </ion-item>
+  </ion-radio-group>
+  <ion-item>
+    <ion-label position="floating">Período</ion-label>
+    <ion-input type="number" name="periodo" [(ngModel)]="periodo"></ion-input>
+  </ion-item>
+  <ion-radio-group name="tipoPeriodo" [(ngModel)]="tipoPeriodo">
+    <ion-item>
+      <ion-radio [value]="1"></ion-radio>
+      <ion-label>mensal</ion-label>
+      <ion-radio [value]="2"></ion-radio>
+      <ion-label>Anual</ion-label>               
+    </ion-item>
+  </ion-radio-group>
+  <ion-item>
+    <ion-label position="floating">Desconto</ion-label>
+    <ion-input type="number" name="desconto" [(ngModel)]="desconto"></ion-input>
+  </ion-item>
+</div>
+<div class="classButtons">
+  <ion-button shape="round" (click)="calcular()">calcular</ion-button>
+  <ion-button shape="round" (click)="cancelar()">cancelar</ion-button>
+</div>
+</ion-content>

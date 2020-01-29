@@ -8,14 +8,23 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
+          <div *ngFor="let p of appPages">
+            <ion-item button *ngIf="p.subPages?.length>0" detail="false" (click)="p.button=!p.button">
+              <ion-icon *ngIf="!p.button" slot="end" name="arrow-round-forward"></ion-icon>
+              <ion-icon  id="colorIcon" *ngIf="p.button" slot="end" name="arrow-round-down"></ion-icon>
+              <ion-label>{{p.title}}</ion-label>
             </ion-item>
-          </ion-menu-toggle>
+            <ion-list *ngIf="p.button">
+              <ion-menu-toggle auto-hide="false" *ngFor="let s of p.subPages">
+                <ion-item [routerDirection]="'root'" 
+                [routerLink]="[s.url]" 
+                routerLinkActive="actived"
+                [class.actived-sub]="p.button">
+                  <ion-label>{{s.title}}</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list>
+          </div>
         </ion-list>
       </ion-content>
     </ion-menu>

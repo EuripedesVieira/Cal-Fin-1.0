@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+      Desconto
+      </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <div class="class1">
+          <ion-item>
+              <ion-label position="floating">Valor</ion-label>
+              <ion-input type="number" name="valor" [(ngModel)]="valor"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Taxa percentual</ion-label>
+              <ion-input type="number" name="taxa" [(ngModel)]="taxa"  placeholder="%"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Resultado</ion-label>
+              <ion-input type="number" name="resultado" [(ngModel)]="resultado"></ion-input>
+          </ion-item>
+      </div>
+      <div class="classButtons">
+          <ion-button shape="round" (click)="calcular()">calcular</ion-button>
+          <ion-button shape="round" (click)="cancelar()">cancelar</ion-button>
+      </div>
+  </ion-content>
+        

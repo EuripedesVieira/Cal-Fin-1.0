@@ -1,0 +1,39 @@
+ion-toolbar{
+   --background:var(--ion-color-success);
+}
+
+ion-list{
+   padding-top: 0;
+   ion-item{
+      --padding-start: 0px;
+      ion-label{
+      margin-left: 18px;
+      }
+   }
+}
+
+.actived{
+   --ion-text-color:var(--ion-color-success);
+   ion-icon{
+      --ion-text-color:var(--ion-color-success);
+   };
+}
+
+.actived-sub{
+   --padding-start: 0;
+   margin-left: 18px;
+   padding: 0;
+   ion-label{
+      margin-top:0px;
+      margin-bottom: 0px;
+      }
+}
+
+#colorIcon{
+   color:#10dc60;
+}
+
+ion-list.ios{
+   margin-bottom: 0;
+   margin-top: 0;
+}

@@ -1,5 +1,7 @@
 {
   "name": "Cal-Fin-1.0",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
