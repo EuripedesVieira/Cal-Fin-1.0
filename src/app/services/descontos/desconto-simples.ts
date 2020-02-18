@@ -14,9 +14,14 @@ export class DescontoSimples extends GenericComponent{
        return valorTitulo;
    }
 
-   calcularTaxa(desconto: number, valorTitulo:number, periodo:number):number{
-       let taxa:number = 100*(desconto/(valorTitulo*periodo));
-       return taxa;
+    calcularTaxa(desconto: number, valorTitulo:number, periodo:number):number{
+        let taxa:number = 100*(desconto/(valorTitulo*periodo));
+        if(taxa>100){
+            super.abrirToast(this.mensagem15);
+            return taxa= null;
+        }
+        else
+            return taxa;
    }
 
    calcularPeriodo(desconto:number, valorTitulo:number, taxa:number):number{

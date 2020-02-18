@@ -1,6 +1,5 @@
 import { GenericComponent } from '../generic-component';
-
-export class DescontoComposto extends GenericComponent{
+export class DescontoComposto extends GenericComponent {
 
    calcularDesconto(valorTitulo: number, taxa: number, periodo:number){
        taxa=1-(taxa/100);
@@ -16,7 +15,12 @@ export class DescontoComposto extends GenericComponent{
 
    calcularTaxa(desconto: number, valorTitulo:number, periodo:number){
        let taxa:number = (1-Math.pow((1-(desconto/valorTitulo)),(1/periodo)))*100;
-       return taxa;
+        if(taxa>100){
+            super.abrirToast(this.mensagem15);
+            return taxa= null;
+        }
+        else
+            return taxa;
    }
 
    calcularPeriodo(desconto:number, valorTitulo:number, taxa:number){

@@ -16,6 +16,7 @@ export class GenericComponent{
     mensagem12: string;
     mensagem13: string;
     mensagem14: string;
+    mensagem15: string;
 
     valor: number;
     taxa: number;
@@ -51,6 +52,7 @@ export class GenericComponent{
         this.mensagem12 = "O valor futuro deve ser maior que o deposito";
         this.mensagem13 = "O valor da parcela deve ser maior do que [Valor atual x taxa]";
         this.mensagem14 = "O valor da parcela deve ser maior do que [(Valor atual x taxa)/(1 + taxa/100)]";
+        this.mensagem15 = "O valor do desconto não pode ultrapasser 100%"
     };
     
     async abrirToast(mensagem: string ){
